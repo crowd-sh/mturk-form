@@ -1,0 +1,64 @@
+{
+    "Title": "Use the Data to Fill Out the Form",
+    "Instructions": [
+        "Use the link below to review the Website. Collect the following information if it's available:",
+        [
+            "Career Page",
+            "CEO Name",
+            "CEO Email (Use first name @company.com if you can't find the email.)",
+            "CEO LinkedIn",
+            "CTO Name",
+            "CTO Email (Use first name @company.com if you can't find the email.)",
+            "CTO LinkedIn"
+        ]
+    ],
+    "InputFields": [
+        {
+            "Label": "Company Name",
+            "ID": "company_name",
+            "Type": "Text"
+        },
+        {
+            "Label": "Company URL",
+            "ID": "company_url",
+            "Type": "Link"
+        }
+    ],
+    "OutputFields": [
+        {
+            "Label": "Career Page",
+            "ID": "careerPage",
+            "Type": "Text"
+        },
+        {
+            "Label": "CEO Name",
+            "ID": "ceoName",
+            "Type": "Text"
+        },
+        {
+            "Label": "CEO Email",
+            "ID": "ceoEmail",
+            "Type": "Text"
+        },
+        {
+            "Label": "CEO LinkedIn",
+            "ID": "ceoLinkedIn",
+            "Type": "Text"
+        },
+        {
+            "Label": "CTO Name",
+            "ID": "ceoName",
+            "Type": "Text"
+        },
+        {
+            "Label": "CTO Email",
+            "ID": "ceoEmail",
+            "Type": "Text"
+        },
+        {
+            "Label": "CTO LinkedIn",
+            "ID": "ceoLinkedIn",
+            "Type": "Text"
+        }
+    ]
+}

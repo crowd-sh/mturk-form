@@ -1,0 +1,55 @@
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<section class="container" id="MTurkForm"><!-- Instructions -->
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+        <!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Website data collection - Instructions</strong> <span class="collapse-text">(Click to expand)</span> </a>
+        <div class="panel-body" id="instructionBody">
+          <% @form['Instructions'].each do |inst| %>
+            <% case inst
+            when String %>
+              <p><%= inst %></p>
+            <% when Array %>
+              <ul>
+                <% inst.each do |li| %>
+                  <li><%= li %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <%#= inst.class %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @form['InputFields'].each do |input| %>
+      <div class="col-xs-12 col-md-8 col-md-offset-2 image">
+        <label><%= input['Label'] %>:</label>
+        <div class="well">
+          <% case input['Type']
+          when "Text" %>
+            ${<%= input['ID'] %>}
+          <% when "Link" %>
+            <a class="dont-break-out" href="${<%= input['ID'] %>}" target="_blank">${<%= input['ID'] %>}</a>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 fields">
+      <% @form['OutputFields'].each do |output| %>
+        <div class="form-group fieldset">
+          <label for="email"><%= output['Label'] %>:</label>
+          <input class="form-control" id="<%= output['ID'] %>" name="<%= output['ID'] %>" placeholder="<%= output['Placeholder'] %>" type="text" />
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- End Layout --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries -->
+</section>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" />
